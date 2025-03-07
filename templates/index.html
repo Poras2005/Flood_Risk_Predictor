@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather and Flood Predictor</title>
+    <link rel="stylesheet" href="/static/static.css">
+</head>
+<body>
+     <video autoplay muted loop class="video-background">
+        <source src="/static/2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <header>Flood Risk Predictor</header>
+
+    <div class="container">
+        <h1>Check Weather and Flood Risk</h1>
+        <div class="form-container">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" placeholder="e.g., Mumbai">
+            <button onclick="getPrediction()">Get Weather and Prediction</button>
+        </div>
+
+        <div class="error" id="error" style="display:none;"></div>
+
+        <div class="result-container" id="result" style="display:none;">
+            <!-- Current Day's Results -->
+            <div class="result-box" id="current-day-box">
+                <h2>Current Day</h2>
+                <p><strong>Temperature:</strong> <span id="current-temperature"></span> °C</p>
+                <p><strong>Humidity:</strong> <span id="current-humidity"></span> %</p>
+                <p><strong>Windspeed:</strong> <span id="current-windspeed"></span> m/s</p>
+                <p><strong>Rainfall:</strong> <span id="current-rainfall"></span> mm</p>
+                <p><strong>Flood Risk:</strong> <span id="current-flood-risk"></span></p>
+                <p><strong>Risk Probability:</strong> <span id="current-risk-percentage"></span></p>
+            </div>
+            
+            <!-- Next Day's Results -->
+            <div class="result-box" id="next-day-box">
+                <h2>Next Day</h2>
+                <p><strong>Temperature:</strong> <span id="next-day-temperature"></span> °C</p>
+                <p><strong>Humidity:</strong> <span id="next-day-humidity"></span> %</p>
+                <p><strong>Windspeed:</strong> <span id="next-day-windspeed"></span> m/s</p>
+                <p><strong>Rainfall:</strong> <span id="next-day-rainfall"></span> mm</p>
+                <p><strong>Flood Risk:</strong> <span id="next-day-flood-risk"></span></p>
+                <p><strong>Risk Probability:</strong> <span id="next-day-risk-percentage"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="container2">
+        <h2 style="color: rgb(223, 225, 250);">Mitigation Stratagies</h2>
+        <div id="temp"><div class="point"><p> Structural Measures <br><br>
+            Construct levees, dams, and flood barriers to control water flow and prevent flooding in populated areas. Build retention basins and reservoirs to store excess rainwater during heavy rainfall. Improve stormwater drainage systems to handle urban runoff efficiently. Elevate critical infrastructure like hospitals, power stations, and homes in flood-prone areas. Reinforce riverbanks to prevent erosion and reduce the risk of overflow. Conduct regular maintenance of these structures to ensure they remain effective during floods.</p></div>
+        <div class="point"><p>Non-Structural Measures <br><br>
+            Designate flood-prone areas for low-risk uses like agriculture or parks through floodplain zoning. Develop early warning systems using weather radars and predictive models to issue timely alerts. Conduct public awareness campaigns to educate communities about flood risks and safety measures. Prepare emergency response plans, including evacuation routes and relief supply distribution. Promote community participation in disaster preparedness programs. Establish coordination among local authorities for swift and effective flood response.</p></div>
+        <div class="point"><p>Nature-Based Solutions <br><br>
+            Restore wetlands to act as natural sponges that absorb and slow down excess water. Plant trees and promote reforestation to reduce surface runoff and enhance water absorption. Use green infrastructure like green roofs, rain gardens, and porous pavements to manage urban flooding. Protect mangroves and coastal vegetation to shield against storm surges and flooding. Widen and deepen rivers to improve water flow and reduce the likelihood of overflow. Promote sustainable farming practices to prevent soil erosion and maintain natural water flow.</p></div>
+        <div class="point"><p>Technological Interventions <br><br>
+            Install IoT-based sensors and monitoring systems to track water levels in real time. Use AI and machine learning models to predict floods based on weather and hydrological data. Develop mobile applications to provide real-time alerts and evacuation instructions to residents. Employ GIS mapping to identify high-risk flood zones and plan mitigation strategies. Use drones for aerial surveys and monitoring of flood-affected areas. Enhance forecasting capabilities by integrating satellite data and advanced weather models.</p></div>
+        <div class="point"><p> Socioeconomic Strategies <br><br>
+            Relocate communities living in high-risk flood zones to safer areas with better infrastructure. Provide affordable flood insurance to help individuals and businesses recover financially after floods. Diversify livelihoods in flood-prone areas to reduce dependence on agriculture and promote economic resilience. Establish disaster relief funds to provide immediate assistance to affected communities. Conduct skill-building workshops to train residents in emergency response and recovery. Promote public-private partnerships for funding and implementing flood mitigation measures.</p></div>
+        <div class="point"><p>Policy and Governance <br><br>
+            Enforce strict building codes to ensure flood-resistant construction in vulnerable areas. Implement integrated water resource management to coordinate upstream and downstream water usage. Allocate government funding for large-scale flood prevention and mitigation projects. Strengthen local governance structures for better disaster response coordination. Develop national policies for climate adaptation and flood risk management. Monitor and evaluate the effectiveness of mitigation measures through regular assessments and public feedback.</p></div>
+
+    </div>
+    <script src="/static/script.js"></script>
